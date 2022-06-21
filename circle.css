@@ -1,0 +1,60 @@
+/* Circle colors: #fb5dad, #55fb9f, #b97aff; */
+/* Backgrond color: #050210 */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050210;
+}
+
+.circle {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 70%;
+    background: linear-gradient(#fb5dad, #fb5dad, #fb5dad);
+    animation: animate 1s linear infinite;
+}
+
+/* Animation */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circle span {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 70%;
+    background: linear-gradient(#55fb9f, #b97aff, #fb5dad);
+}
+
+/* circle glow */
+.circle span:nth-child(1) {
+    filter: blur(20px);
+}
+
+.circle span:nth-child(2) {
+    filter: blur(20px);
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: #050210;
+    border-radius: 100%;
+}
